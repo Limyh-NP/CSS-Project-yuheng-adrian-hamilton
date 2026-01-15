@@ -8,8 +8,8 @@ export default function Navbar() {
       <h1 className={styles.logo}>Singapore Attractions</h1>
       <ul className={styles.navLinks}>
         <li><Link href="/">Home</Link></li>
-        <li><Link href="/attractions">Attractions</Link></li>
-        <li><Link href="/contact">Contact</Link></li>
+        <li><Link href="/attraction">Attractions</Link></li>
+        <li><Link href="/Contact">Contact</Link></li>
       </ul>
     </nav>
   );
