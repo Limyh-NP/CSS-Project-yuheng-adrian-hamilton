@@ -6,7 +6,7 @@ export default function Home() {
       <h2 className={styles.h2}>Welcome to Singapore</h2>
       <p>
         Explore Singapores famous tourist attractions through this
-        responsive web application. poo poo head
+        responsive web application. 
       </p>
     </section>
   );

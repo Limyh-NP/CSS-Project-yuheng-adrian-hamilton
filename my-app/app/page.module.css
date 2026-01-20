@@ -3,10 +3,14 @@
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  background-color: #E0E0E0;
 }
-
+.gradient {
+  background: linear-gradient(#004080,#28c6e1)
+}
 .main {
   padding: 20px;
+  
 }
 
 .h1, .h2 {
@@ -23,7 +27,7 @@
 }
 
 .logo {
-  color: white;
+  color: #F5F5DC;
   font-size: 20px;
   margin: 0;
 }
@@ -38,7 +42,7 @@
 }
 
 .navLinks li a {
-  color: white;
+  color: #F5F5DC;
   text-decoration: none;
   font-weight: bold;
 }
@@ -78,7 +82,7 @@
 }
 
 .inputField,
-.textAreaField {
+.textAreaField {  
   width: 100%;
   padding: 6px;
   margin-top: 4px;
@@ -87,7 +91,7 @@
 .submitButton {
   padding: 8px 16px;
   background-color: #004080;
-  color: white;
+  color: #F5F5DC;
   border: none;
   cursor: pointer;
 }
@@ -98,10 +102,16 @@
 
 /* ===== Footer ===== */
 .footer {
-  background-color: #f4f4f4;
+  background-color: #333333;
   text-align: center;
+  color: #F5F5DC;
   padding: 10px;
   margin-top: 40px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
 }
 
 /* ===== Responsive Design ===== */
