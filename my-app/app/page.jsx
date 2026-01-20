@@ -8,6 +8,9 @@ export default function Home() {
         Explore Singapores famous tourist attractions through this
         responsive web application. 
       </p>
+      <p>
+        Go ahead to the attractions tab to find out more of our attractions!
+      </p>
     </section>
   );
 }
