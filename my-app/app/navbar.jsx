@@ -4,7 +4,7 @@ import styles from './page.module.css'; // CSS module in app/
 
 export default function Navbar() {
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar} >
       <h1 className={styles.logo}>Singapore Attractions</h1>
       <ul className={styles.navLinks}>
         <li><Link href="/">Home</Link></li>
