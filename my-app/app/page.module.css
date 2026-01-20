@@ -3,18 +3,16 @@
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  background-color: #E0E0E0;
+  background-color: #f7f7e6;
 }
-.gradient {
-  background: linear-gradient(#004080,#28c6e1)
-}
+
 .main {
   padding: 20px;
   
 }
 
 .h1, .h2 {
-  color: #004080;
+  color: #800000d9;
 }
 
 /* ===== Navbar ===== */
@@ -22,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #004080;
+  background-color: #800000d9;
   padding: 12px 20px;
 }
 
