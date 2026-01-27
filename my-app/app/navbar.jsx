@@ -1,15 +1,31 @@
 'use client';
 import Link from 'next/link';
-import styles from './page.module.css'; // CSS module in app/
+import { usePathname } from 'next/navigation';
+import styles from './page.module.css';
 
 export default function Navbar() {
+  const pathname = usePathname(); // detects current page
+
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Attractions', href: '/attraction' },
+    { name: 'Itinerary', href: '/Itinerary' },
+  ];
+
   return (
     <nav className={styles.navbar} >
       <h1 className={styles.logo}>Singapore Attractions</h1>
       <ul className={styles.navLinks}>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/attraction">Attractions</Link></li>
-        <li><Link href="/Contact">Contact</Link></li>
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              className={`${pathname === item.href ? styles.activeLink : ''}`}
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
