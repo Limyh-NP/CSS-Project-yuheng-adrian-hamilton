@@ -7,17 +7,21 @@ export default function Attractions() {
         <thead>
           <tr>
             <th>Attraction</th>
-            <th>Location</th>
+            <th>Address</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Marina Bay Sands</td>
-            <td>Marina Bay</td>
+            <td>10 Bayfront Ave, Singapore 018956</td>
           </tr>
           <tr>
-            <td>Sentosa Island</td>
             <td>Sentosa</td>
+            <td>Sentosa Island</td>
+          </tr>
+          <tr>
+            <td>Gardens By The Bay</td>
+            <td>18 Marina Gardens Dr, Singapore 018953</td>
           </tr>
         </tbody>
       </table>
