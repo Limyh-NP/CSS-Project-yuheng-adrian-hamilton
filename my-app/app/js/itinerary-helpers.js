@@ -29,6 +29,19 @@ export function getCardStyles() {
     boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
     overflow: 'hidden',
     backgroundColor: '#fff',
+    transition: 'all 0.3s ease',
+    animation: 'fadeInUp 0.5s ease-out',
+  };
+}
+
+/**
+ * Renders the inline styles for card hover state
+ * Note: For full hover effects, use CSS classes
+ */
+export function getCardHoverStyles() {
+  return {
+    transform: 'translateY(-5px)',
+    boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
   };
 }
 
@@ -79,6 +92,7 @@ export function getModalOverlayStyles() {
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 1000,
+    animation: 'fadeIn 0.3s ease-in-out',
   };
 }
 
@@ -95,6 +109,7 @@ export function getModalContentStyles() {
     maxHeight: '90vh',
     overflowY: 'auto',
     position: 'relative',
+    animation: 'slideUp 0.3s ease-out',
   };
 }
 

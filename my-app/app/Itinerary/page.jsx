@@ -20,10 +20,12 @@ import {
 export default function Itinerary() {
   const [selected, setSelected] = useState(null);
   const [activeTab, setActiveTab] = useState('morning');
+  const [tabContentKey, setTabContentKey] = useState(0);
 
   const handleCardClick = (item) => {
     setSelected(item);
     setActiveTab('morning');
+    setTabContentKey(0);
   };
 
   const handleCloseModal = () => {
@@ -32,38 +34,46 @@ export default function Itinerary() {
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+    setTabContentKey(prev => prev + 1); // Force re-render with animation
   };
 
   const renderTabContent = () => {
     const data = selected[activeTab];
     return (
-      <>
+      <article key={tabContentKey} style={{ animation: 'fadeIn 0.4s ease-in-out' }}>
         <img
           src={data.img}
           alt={activeTab}
           style={getModalImageStyles()}
         />
-        <ul>
-          {data.todo.map((task, index) => (
-            <li key={index}>{task}</li>
-          ))}
-        </ul>
-        <p>
-          <strong>Where to eat:</strong> {data.eat}
-        </p>
-      </>
+        <section>
+          <h4 style={{ marginTop: '15px', marginBottom: '10px' }}>Things to Do:</h4>
+          <ul>
+            {data.todo.map((task, index) => (
+              <li key={index}>{task}</li>
+            ))}
+          </ul>
+        </section>
+        <footer style={{ marginTop: '15px', paddingTop: '10px', borderTop: '1px solid #eee' }}>
+          <p>
+            <strong>Where to eat:</strong> {data.eat}
+          </p>
+        </footer>
+      </article>
     );
   };
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.h2}>Daily Itinerary Guide</h2>
-      <p>Click a location to see suggestions for morning, afternoon, and evening.</p>
+      <header>
+        <h2 className={styles.h2}>Daily Itinerary Guide</h2>
+        <p>Click a location to see suggestions for morning, afternoon, and evening.</p>
+      </header>
 
       {/* Cards */}
-      <div style={getCardsContainerStyles()}>
+      <main style={getCardsContainerStyles()}>
         {itineraryData.map((item) => (
-          <div
+          <article
             key={item.name}
             onClick={() => handleCardClick(item)}
             style={getCardStyles()}
@@ -74,45 +84,49 @@ export default function Itinerary() {
               style={getCardImageStyles()}
             />
             <p style={getCardNameStyles()}>{item.name}</p>
-          </div>
+          </article>
         ))}
-      </div>
+      </main>
 
       {/* Modal */}
       {selected && (
-        <div
+        <aside
           onClick={handleCloseModal}
           style={getModalOverlayStyles()}
         >
-          <div
+          <article
             onClick={(e) => e.stopPropagation()}
             style={getModalContentStyles()}
           >
             <button
               onClick={handleCloseModal}
               style={getCloseButtonStyles()}
+              aria-label="Close modal"
             >
               ×
             </button>
 
-            <h3>{selected.name}</h3>
+            <header>
+              <h3>{selected.name}</h3>
+            </header>
 
             {/* Tabs */}
-            <div style={getTabButtonsContainerStyles()}>
+            <nav style={getTabButtonsContainerStyles()}>
               {getTimePeriods().map((tab) => (
                 <button
                   key={tab}
                   onClick={() => handleTabChange(tab)}
                   style={getTabButtonStyles(activeTab === tab)}
+                  aria-pressed={activeTab === tab}
                 >
                   {capitalizeFirstLetter(tab)}
                 </button>
               ))}
-            </div>
+            </nav>
 
             {renderTabContent()}
-          </div>
-        </div>
+          </article>
+        </aside>
       )}
     </section>
   );

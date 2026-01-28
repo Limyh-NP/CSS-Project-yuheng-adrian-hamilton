@@ -10,10 +10,11 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'Attractions', href: '/attraction' },
     { name: 'Itinerary', href: '/Itinerary' },
+    { name: 'Contact', href: '/Contact' },
   ];
 
   return (
-    <nav className={styles.navbar} >
+    <nav className={styles.navbar}>
       <h1 className={styles.logo}>Singapore Attractions</h1>
       <ul className={styles.navLinks}>
         {navItems.map((item) => (
