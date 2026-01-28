@@ -1,13 +1,15 @@
+
 'use client';
 import { useState, useEffect } from 'react';
 import styles from '../css/page.moduleAdrian.css';
-import { tourPackages, contactInfo } from '../js/contact-data';
+import { tourPackages, contactInfo } from '../js/Contact-data';
 import {
   validateForm,
   getPackageById,
   loadSubmissions,
   saveSubmissions,
   createSubmission,
+  injectAnimationStyles,
   getHeaderStyles,
   getPackageSectionTitleStyles,
   getErrorMessageStyles,
@@ -58,9 +60,10 @@ export default function Contact() {
   const [savedSubmissions, setSavedSubmissions] = useState([]);
   const [hoveredStates, setHoveredStates] = useState({});
 
-  // Load saved submissions on mount
+  // Load saved submissions and inject animations on mount
   useEffect(() => {
     setSavedSubmissions(loadSubmissions());
+    injectAnimationStyles(); // Inject animation keyframes
   }, []);
 
   const handleInputChange = (e) => {
@@ -128,8 +131,7 @@ export default function Contact() {
         </p>
       </header>
 
-
-
+      
       {/* Package Cards */}
       <article>
         <header>
