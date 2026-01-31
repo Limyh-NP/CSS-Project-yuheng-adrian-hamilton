@@ -29,6 +29,26 @@ export default function SentosaPage() {
 
       <br />
 
+      <section id="usstop">
+      <h2>
+        Things do to at Sentosa
+      </h2>
+      </section>
+      
+      <br />
+      
+      <h3>
+        Universal Studios Singapore
+      </h3>
+    
+      <img src="/attraction_images/uss.jpg" alt="USS" style={{ width: "60%", borderRadius: "12px", marginBottom: "20px" }} />
+
+      <p>
+        One of the most fun and enjoyable things to do in Sentosa is to visit
+        Universal Studios Singapore! Enjoy tons of rollercoasters, leisure rides, and
+        good food!
+      </p>
+
       <Link href="/" className="link">
         ← Back to Home
       </Link>
