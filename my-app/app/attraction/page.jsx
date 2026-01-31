@@ -10,7 +10,7 @@ export default function Attractions() {
         {/* Sentosa */}
         <div className="card">
           <h2>Sentosa</h2>
-          <img src="/attraction_images/sentosa.jpg" alt="Sentosa" />
+          <img src="/media/sentosa.jpg" alt="Sentosa" />
           <Link href="/attraction_sentosa" className="link">
             Find out more →
           </Link>
@@ -19,7 +19,7 @@ export default function Attractions() {
         {/* Marina Bay Sands */}
         <div className="card">
           <h2>Marina Bay Sands</h2>
-          <img src="/attraction_images/mbs.jpg" alt="Marina Bay Sands" />
+          <img src="/media/mbs.jpg" alt="Marina Bay Sands" />
           <Link href="/mbs" className="link">
             Find out more →
           </Link>
@@ -28,7 +28,7 @@ export default function Attractions() {
         {/* Gardens by the Bay */}
         <div className="card">
           <h2>Gardens by the Bay</h2>
-          <img src="/attraction_images/gbtb.jpg" alt="Gardens by the Bay" />
+          <img src="/media/gbtb.jpg" alt="Gardens by the Bay" />
           <Link href="/gardens" className="link">
             Find out more →
           </Link>

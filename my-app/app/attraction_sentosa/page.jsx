@@ -9,7 +9,7 @@ export default function SentosaPage() {
       <h1>Sentosa</h1>
 
       <img
-        src="/attraction_images/sentosa.jpg"
+        src="/media/sentosa.jpg"
         alt="Sentosa"
         style={{ width: "60%", borderRadius: "12px", marginBottom: "20px" }}
       />
@@ -42,7 +42,7 @@ export default function SentosaPage() {
         Universal Studios Singapore
       </h3>
     
-      <img src="/attraction_images/uss.jpg" alt="USS" style={{ width: "60%", borderRadius: "12px", marginBottom: "20px" }} />
+      <img src="/media/uss.jpg" alt="USS" style={{ width: "60%", borderRadius: "12px", marginBottom: "20px" }} />
      
       <p>
         One of the most fun and enjoyable things to do in Sentosa is to visit
@@ -74,7 +74,7 @@ export default function SentosaPage() {
         Adventure Cove Waterpark
       </h3>
 
-      <img src="/attraction_images/adventurecove.jpg" alt="USS" style={{ width: "60%", borderRadius: "12px", marginBottom: "20px" }} />
+      <img src="/media/adventurecove.jpg" alt="USS" style={{ width: "60%", borderRadius: "12px", marginBottom: "20px" }} />
 
       <p>
         Adventure Cove Waterpark, located in Resorts World Sentosa, Singapore, is a premier tropical aquatic park featuring 14 thrilling rides and attractions. It offers a unique mix of high-speed water slides—including Southeast Asia's first hydro-magnetic coaster—a 620-meter lazy river, and interactive marine experiences like snorkeling with 20,000 fish. 
