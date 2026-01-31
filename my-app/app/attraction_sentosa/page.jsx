@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "/app/page.moduleYuheng.css";
+import styles from "../css/page.moduleYuheng.css";
 
 export default function SentosaPage() {
   return (

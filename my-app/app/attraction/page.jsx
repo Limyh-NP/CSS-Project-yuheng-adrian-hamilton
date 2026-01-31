@@ -1,5 +1,8 @@
 import Link from "next/link";
-import styles from '/app/page.moduleYuheng.css';
+import styles from "../css/page.moduleYuheng.css";
+
+
+
 
 export default function Attractions() {
   return (
@@ -20,7 +23,7 @@ export default function Attractions() {
         <div className="card">
           <h2>Marina Bay Sands</h2>
           <img src="/media/mbs.jpg" alt="Marina Bay Sands" />
-          <Link href="/mbs" className="link">
+          <Link href="/attraction_mbs" className="link">
             Find out more →
           </Link>
         </div>
@@ -29,7 +32,7 @@ export default function Attractions() {
         <div className="card">
           <h2>Gardens by the Bay</h2>
           <img src="/media/gbtb.jpg" alt="Gardens by the Bay" />
-          <Link href="/gardens" className="link">
+          <Link href="/attraction_gbtb" className="link">
             Find out more →
           </Link>
         </div>

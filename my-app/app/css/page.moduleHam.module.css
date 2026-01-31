@@ -1,0 +1,233 @@
+/* app/css/page.moduleHam.css */
+
+/* Hero with parallax layer */
+.hero {
+  position: relative;
+  padding: 48px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  background: linear-gradient(180deg, rgba(128,0,0,0.06), rgba(247,247,230,0.5));
+}
+
+/* media container for next/image fill */
+.heroMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.6s ease-out;
+}
+
+/* subtle slow zoom and float */
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.05) contrast(1.02) brightness(0.95);
+  transform: scale(1.06);
+  transition: transform 8s ease;
+}
+
+/* on hover (desktop) slightly zoom more */
+.hero:hover .heroImage {
+  transform: scale(1.12);
+}
+
+/* overlay to improve text contrast */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.06));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* content sits above media */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-align: center;
+  color: #fff;
+  padding: 24px;
+  backdrop-filter: blur(0.6px);
+}
+
+/* text styles */
+.h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2rem;
+  color: #fff;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.lead {
+  margin: 0 0 18px 0;
+  color: rgba(255,255,255,0.95);
+  font-size: 1.05rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* Hero actions */
+.heroActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.ctaPrimary {
+  background-color: #ff6b6b; /* warmer CTA */
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(255,107,107,0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(255,107,107,0.22);
+}
+
+.ctaSecondary {
+  background-color: rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* pulse micro-interaction */
+.pulse {
+  animation: pulse 2.6s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 6px 20px rgba(255,107,107,0.12); transform: translateY(0); }
+  50% { box-shadow: 0 18px 40px rgba(255,107,107,0.18); transform: translateY(-3px); }
+  100% { box-shadow: 0 6px 20px rgba(255,107,107,0.12); transform: translateY(0); }
+}
+
+/* Single featured card wrapper */
+.singleCardWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 0 12px;
+  width: 100%;
+}
+
+/* Card */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 760px;
+  transform-origin: center;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* hover lift and slight tilt */
+.card:hover {
+  transform: translateY(-8px) rotateX(1.2deg);
+  box-shadow: 0 20px 50px rgba(2,6,23,0.12);
+}
+
+/* image wrapper for card to allow subtle parallax on scroll */
+.cardImageWrap {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+/* card image (next/image) */
+.cardImage {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 6s ease;
+}
+
+/* gentle float on image */
+.cardImageWrap:hover .cardImage {
+  transform: scale(1.04) translateY(-6px);
+}
+
+/* card body */
+.cardBody {
+  padding: 16px;
+  flex: 1;
+}
+
+/* link */
+.cardLink {
+  display: inline-block;
+  margin-top: 10px;
+  color: #004080;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* CTA strip */
+.ctaStrip {
+  margin-top: 28px;
+  padding: 18px;
+  background-color: rgba(0,64,128,0.06);
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 700ms cubic-bezier(.2,.9,.2,1), transform 700ms cubic-bezier(.2,.9,.2,1);
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* small floating animation for hero image to feel alive */
+@keyframes floatSlow {
+  0% { transform: translateY(0) scale(1.06); }
+  50% { transform: translateY(-6px) scale(1.07); }
+  100% { transform: translateY(0) scale(1.06); }
+}
+.heroImage {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .cardImageWrap { height: 260px; }
+  .hero { min-height: 360px; padding: 36px 16px; }
+  .h1 { font-size: 1.9rem; }
+}
+
+@media (max-width: 600px) {
+  .cardImageWrap { height: 180px; }
+  .hero { min-height: 320px; padding: 28px 12px; }
+  .heroContent { text-align: left; padding: 18px; }
+  .heroActions { justify-content: flex-start; }
+}
